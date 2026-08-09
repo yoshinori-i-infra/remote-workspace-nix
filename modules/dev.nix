@@ -23,6 +23,13 @@
     '')
   ];
 
+  # fzf の設定 (ripgrep と連携)
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+    defaultCommand = "rg --files --hidden --glob '!.git'";
+  };
+
   # 環境変数
   home.sessionVariables = {
     GOPATH = "${config.home.homeDirectory}/go";

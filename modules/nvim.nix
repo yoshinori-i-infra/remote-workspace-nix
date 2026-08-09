@@ -14,6 +14,10 @@ in
     viAlias = true;
     vimAlias = true;
   };
+  home.packages = with pkgs; [
+    nil
+    nixfmt
+  ];
 
   xdg.configFile."nvim/init.lua".text = ''
     dofile("${dotfilesDir}/nvim/init.lua")
