@@ -26,7 +26,6 @@
   # 環境変数
   home.sessionVariables = {
     GOPATH = "${config.home.homeDirectory}/go";
-    EDITOR = "vim";
   };
 
   # PATH 追加
