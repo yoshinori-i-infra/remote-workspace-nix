@@ -1,10 +1,15 @@
 { pkgs, ... }:
 
 {
+
   programs.git = {
     enable = true;
-    userName = "huslabo";
-    userEmail = "dchaozsh@gmail.com";
+    settings = {
+      user = {
+	userName = "huslabo";
+      	userEmail = "dchaozsh@gmail.com";
+      };
+    };
   };
   
 }
