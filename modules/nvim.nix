@@ -13,11 +13,11 @@ in
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
-    extraConfig = "";
   };
 
-  xdg.configFile."nvim".source = 
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/nvim";
+  xdg.configFile."nvim/init.lua".text = ''
+    dofile("${dotfilesDir}/nvim/init.lua")
+  '';
 
   home.file.".vimrc".source = 
     config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/.vimrc";
