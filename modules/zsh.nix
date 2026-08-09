@@ -23,7 +23,6 @@
       }
     ];
 
-    # [.zshrc の最先頭] Powerlevel10k Instant Prompt
     initExtraFirst = ''
       if [[ -r "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
         source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
@@ -32,6 +31,8 @@
 
     # [.zshrc の末尾] 設定読み込み
     initContent = lib.mkBefore ''
+      bindkey -v
+
       # --- Powerlevel10k 設定の読み込み ---
       [ -f "$HOME/Documents/setting/p10k.zsh" ] && source "$HOME/Documents/setting/p10k.zsh"
       [ -f "$HOME/.p10k.zsh" ] && source "$HOME/.p10k.zsh"
