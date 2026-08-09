@@ -33,6 +33,7 @@
   # 環境変数
   home.sessionVariables = {
     GOPATH = "${config.home.homeDirectory}/go";
+    NIX_REMOTE = "daemon";
   };
 
   # PATH 追加
