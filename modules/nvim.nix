@@ -13,12 +13,11 @@ in
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
+    extraConfig = "";
   };
 
-  xdg.configFile."nvim" = {
+  xdg.configFile."nvim".source = 
     source = config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/nvim";
-    recursive = true;
-  };
 
   home.file.".vimrc".source = 
     config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/.vimrc";
