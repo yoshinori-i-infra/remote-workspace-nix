@@ -15,8 +15,10 @@ in
     vimAlias = true;
   };
 
-  xdg.configFile."nvim".source = 
-    config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/nvim";
+  xdg.configFile."nvim" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/nvim";
+    recursive = true;
+  };
 
   home.file.".vimrc".source = 
     config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/.vimrc";
