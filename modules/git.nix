@@ -1,6 +1,10 @@
+{ pkgs, ... }:
 
-programs.git = {
-  enable = true;
-  userName = "huslabo";
-  userEmail = "your-email@example.com";
-};
+{
+  programs.git = {
+    enable = true;
+    userName = "huslabo";
+    userEmail = "dchaozsh@gmail.com";
+  };
+  
+}
