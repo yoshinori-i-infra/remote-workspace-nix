@@ -4,25 +4,27 @@
 { config, pkgs, ... }:
 
 let
-  dotfilesDir = "${config.home.homeDirectory}/Documents/setting";
+  my = config.my.dotfilesDir;
 in
 {
-  # Neovim 本体のインストール
   programs.neovim = {
     enable = true;
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
+    
+    plugins = [];
+    
+    initLua = ''
+      dofile("${my}/nvim/init.lua")
+    '';
+
   };
   home.packages = with pkgs; [
     nil
     nixfmt
   ];
 
-  xdg.configFile."nvim/init.lua".text = ''
-    dofile("${dotfilesDir}/nvim/init.lua")
-  '';
-
   home.file.".vimrc".source = 
-    config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/.vimrc";
+    config.lib.file.mkOutOfStoreSymlink "${my}/.vimrc";
 }
