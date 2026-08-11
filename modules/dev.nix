@@ -1,5 +1,7 @@
+# ======================================
+# ~/.config/home-manager/module/dev.nix
+# ======================================
 { config, pkgs, ... }:
-
 let
   my = config.my.dotfilesDir;
 in
@@ -8,23 +10,7 @@ in
   home.packages = with pkgs; [
     # shell
     zsh
-
-    # Go
-    go
-    gopls
-    delve
-    golangci-lint
-    goreleaser
-
-    # Rust
-    cargo
-    rustc
-    rustfmt
-    clippy
-    rust-analyzer
-
-    # Deno
-    deno
+    starship
 
     # CLI ユーティリティ
     jq
@@ -48,23 +34,7 @@ in
     enable = true;
     enableZshIntegration = true;
   };
-
-  # ===========================================
-  # 環境変数・PATH 設定
-  # ===========================================
-  # 環境変数
-  home.sessionVariables = {
-    GOPATH = "${config.home.homeDirectory}/go";
-    NIX_REMOTE = "daemon";
-  };
-
-  # PATH 追加
-  home.sessionPath = [
-    "$HOME/.juliaup/bin"
-    "$HOME/.local/bin"
-    "${config.home.homeDirectory}/go/bin"
-  ];
-  
+ 
   # Zshの設定ファイル
   home.file.".zshrc".source = 
     config.lib.file.mkOutOfStoreSymlink "${my}/.zshrc";
@@ -75,5 +45,6 @@ in
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
+    enableZshIntegration = true;
   };
 }
