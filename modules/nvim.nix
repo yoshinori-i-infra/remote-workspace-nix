@@ -2,7 +2,6 @@
 # ~/.config/home-magager/module/nvim.nix
 # ===========================================
 { config, pkgs, ... }:
-
 let
   my = config.my.dotfilesDir;
 in
@@ -26,5 +25,5 @@ in
   ];
 
   home.file.".vimrc".source = 
-    config.lib.file.mkOutOfStoreSymlink "${my}/.vimrc";
+    config.lib.file.mkOutOfStoreSymlink "${my}/vimrc";
 }

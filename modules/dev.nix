@@ -11,7 +11,12 @@ in
     # shell
     zsh
     starship
-
+    ctop
+    dive
+    gdu
+    lf
+    file
+    
     # CLI ユーティリティ
     jq
     ripgrep
@@ -23,6 +28,11 @@ in
     '')
   ];
 
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
   # fzf の設定 (ripgrep と連携)
   programs.fzf = {
     enable = true;
@@ -30,14 +40,13 @@ in
     defaultCommand = "rg --files --hidden --glob '!.git'";
   };
 
-  programs.zoxide = {
-    enable = true;
-    enableZshIntegration = true;
-  };
- 
   # Zshの設定ファイル
   home.file.".zshrc".source = 
-    config.lib.file.mkOutOfStoreSymlink "${my}/.zshrc";
+    config.lib.file.mkOutOfStoreSymlink "${my}/zshrc";
+
+  # lfの設定ファイル 
+  xdg.configFile."lf/lfrc".source =
+    config.lib.file.mkOutOfStoreSymlink "${my}/lfrc";
 
   # ===========================================
   # Direnv 設定

@@ -6,7 +6,6 @@
   # ==========================================
   imports = [
     ./modules/dev.nix
-    ./modules/zsh.nix
     ./modules/git.nix
     ./modules/nvim.nix
   ];
