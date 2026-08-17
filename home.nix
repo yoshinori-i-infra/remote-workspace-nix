@@ -11,7 +11,7 @@
   ];
 
   # ==========================================
-  # 独自のグローバル変数を定義
+  # 2. 独自のグローバル変数を定義
   # ==========================================
   options.my = {
     dotfilesDir = lib.mkOption {
@@ -35,6 +35,10 @@
     };
 
     programs.home-manager.enable = true;
+      programs.direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+    };
   };
-  
+
 }

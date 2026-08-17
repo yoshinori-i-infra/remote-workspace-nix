@@ -1,5 +1,5 @@
 {
-  description = "Home Manager configuration of hustea";
+  description = "Home Manager configuration of yoshi";
 
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
@@ -10,7 +10,6 @@
     };
   };
 
-  # 高速なコミュニティキャッシュを追加
   nixConfig = {
     extra-substituters = [
       "https://nix-community.cachix.org"

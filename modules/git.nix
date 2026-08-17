@@ -4,12 +4,8 @@
 
   programs.git = {
     enable = true;
-    settings = {
-      user = {
-	userName = "huslabo";
-      	userEmail = "dchaozsh@gmail.com";
-      };
-    };
+    userName = "yoshinori-i-infra";
+    userEmail = "y.imada.dev@gmail.com";
   };
   
 }

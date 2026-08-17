@@ -1,5 +1,5 @@
 # ======================================
-# ~/.config/home-manager/module/dev.nix
+# ~/.config/home-manager/modules/dev.nix
 # ======================================
 { config, pkgs, ... }:
 let
